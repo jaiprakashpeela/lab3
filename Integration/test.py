@@ -1,17 +1,12 @@
 import time
-
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-
 # Set up the webdriver
 driver = webdriver.Chrome()
-
 # YouTube website
 driver.get("https://www.youtube.com/")
-
-
 try:
     # Test 1: search query
     search_input = WebDriverWait(driver, 10).until(
@@ -39,9 +34,6 @@ try:
     )
     channel_name.click()
     time.sleep(5)
-
     driver.implicitly_wait(5)
-
 finally:
-
     driver.quit()
